@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        <form action="{{ url_for('registro') }}" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <button type="submit">Capturar Rostro</button>
+        </form>
+
+        <h2>Video de Captura</h2>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}">
+        </div>
+
+        <form action="{{ url_for('train') }}" method="POST">
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
